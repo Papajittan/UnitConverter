@@ -33,6 +33,9 @@ class UnitConverter:
         self.root2 = None
         self.textvar.set("")
         self.textvar1.set("")
+    def exit1(self):
+        self.root.destroy()
+        self.root = None
     def calculate(self):
             v1 = self.e1.get()
             v2 = self.value_inside.get()
@@ -129,6 +132,8 @@ class UnitConverter:
         button4.grid(row=3,column=0,columnspan=2)
         button5  =Button(text='Force',image=photo5,compound=TOP,fg='grey9',bg='MediumPurple1',command=lambda: self.changew("Force"))
         button5.grid(row=3,column=1,columnspan=2)
+        button11 =Button(text='Exit',fg='grey9',bg='plum2',command= self.exit1)
+        button11.grid(row = 4, column = 1,ipadx=50)
         self.root.mainloop()
 speed = {"kmh": ipy.constants.kmh, "mph": ipy.constants.mph, "mach": ipy.constants.mach, "speed of sound": ipy.constants.speed_of_sound , "knot": ipy.constants.knot, "ms": 1.0}
 pressure = {"atm": ipy.constants.atm, "atmosphere": ipy.constants.atmosphere, "bar": ipy.constants.bar, "torr": ipy.constants.torr, "mmHg": ipy.constants.mmHg, "psi": ipy.constants.psi, "pascals": 1.0}
